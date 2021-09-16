@@ -13,9 +13,9 @@ const ArticleCard = props => {
               <span className="tag crimson">{props.sportTag}</span>
           </div>
 
-          <p className={props.classes}>
+          <div className={props.classes}>
               <Link to={"#"}><h3>{props.title}</h3></Link>
-          </p>
+          </div>
 
       </div>
   )

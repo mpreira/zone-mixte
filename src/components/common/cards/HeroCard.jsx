@@ -14,9 +14,9 @@ const HeroCard = props => {
             </div>
 
 
-            <p className={props.classes}>
+            <div className={props.classes}>
                 <Link to={"#"}><h3>{props.title}</h3></Link>
-            </p>
+            </div>
 
         </div>
     )
