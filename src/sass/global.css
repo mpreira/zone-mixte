@@ -1,3 +1,5 @@
-
+.app {
+  @apply bg-gray-50 w-screen;
+}
 
 /*# sourceMappingURL=global.css.map */

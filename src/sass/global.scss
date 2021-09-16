@@ -1,0 +1,14 @@
+// GENERAL
+body{
+  @apply bg-gray-100 text-gray-800 text-base Open-Sans;
+}
+
+.app{
+  @apply w-screen min-h-screen h-auto flex-col box-border;
+}
+
+
+// TITRES
+h3{
+  @apply text-lg font-bold;
+}

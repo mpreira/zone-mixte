@@ -1,5 +1,98 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+.Poppins {
+  font-family: "Poppins", sans-serif;
+}
+
+.Open-Sans {
+  font-family: "Open Sans", sans-serif;
+}
+
+.crimson {
+  color: #a20c38;
+}
+
+.gold {
+  color: #fe9f33;
+}
+
+.bg-crimson {
+  background-color: #a20c38;
+}
+
+.bg-gold {
+  background-color: #fe9f33;
+}
+
+body {
+  @apply bg-gray-100 text-gray-800 text-base Open-Sans;
+}
+
+.app {
+  @apply w-screen min-h-screen h-auto flex-col box-border;
+}
+
+h3 {
+  @apply text-lg font-bold;
+}
+
+.header.container {
+  @apply w-full flex justify-between items-center p-4 border-b border-gray-200;
+}
+.header .menu {
+  @apply w-1/5;
+}
+.header .logo {
+  @apply w-3/5 flex justify-center;
+}
+.header .logo img {
+  @apply h-12;
+}
+.header .search {
+  @apply w-1/5 flex justify-end;
+}
+
+.sportsbar {
+  @apply flex justify-center items-center w-full;
+}
+.sportsbar button {
+  @apply bg-transparent hover:bg-white rounded-2xl py-3 px-4 mr-2 my-4 text-sm font-semibold gold;
+}
+
+.body {
+  @apply w-full flex flex-col p-4;
+}
+
+.footer {
+  @apply text-xs text-gray-400 flex justify-center;
+}
+
+.hero-card {
+  @apply flex flex-col mt-4 mb-20 text-white;
+}
+.hero-card img {
+  @apply rounded-xl;
+}
+.hero-card span {
+  @apply text-sm;
+}
+
+.article-card {
+  @apply flex flex-col my-4;
+}
+.article-card img {
+  @apply rounded-t-xl;
+}
+
+.tag {
+  @apply text-white py-2 px-3 rounded-xl text-xs uppercase font-semibold absolute -bottom-2.5 right-0;
+}
+.tag.crimson {
+  @apply bg-crimson;
+}
+.tag.gold {
+  @apply bg-gold;
+}
 
 /*# sourceMappingURL=index.css.map */

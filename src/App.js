@@ -1,24 +1,36 @@
-import logo from './logo.svg';
-import './App.css';
+import React, {useEffect} from "react";
+import { BrowserRouter as Router, Route, Redirect, Switch } from 'react-router-dom';
+import WebFont from 'webfontloader';
+
+//layouts
+import HomeLayoutRoute from "./layouts/HomeLayout";
+import PageLayoutRoute from "./layouts/PageLayout";
+
+//components
+import Home from "./components/home/Home";
+import Videos from "./components/videos/Videos";
 
 function App() {
+
+    //webfontloader
+    useEffect( () => {
+        WebFont.load({
+            google: {
+                families: ['Poppins',  'Open Sans']
+            }
+        });
+    }, []);
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Router>
+        <Switch>
+            <Route exact path="/">
+                <Redirect to="/accueil" />
+            </Route>
+            <HomeLayoutRoute path="/accueil" component={Home} />
+            <PageLayoutRoute path="/videos" component={Videos} />
+        </Switch>
+    </Router>
   );
 }
 

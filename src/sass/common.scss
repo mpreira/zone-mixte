@@ -1,0 +1,75 @@
+// HEADER
+.header{
+  &.container{
+    @apply w-full flex justify-between items-center p-4 border-b border-gray-200;
+  }
+
+  .menu{
+    @apply w-1/5;
+  }
+
+  .logo{
+    @apply w-3/5 flex justify-center;
+
+    img{
+      @apply h-12;
+    }
+  }
+
+  .search{
+    @apply w-1/5 flex justify-end;
+  }
+}
+
+// SPORTSBAR
+.sportsbar{
+  @apply flex justify-center items-center w-full;
+
+  button{
+    @apply bg-transparent hover:bg-white rounded-2xl py-3 px-4 mr-2 my-4 text-sm font-semibold gold;
+  }
+}
+
+//BODY
+.body{
+  @apply w-full flex flex-col p-4;
+}
+
+// FOOTER
+.footer{
+  @apply text-xs text-gray-400 flex justify-center;
+}
+
+//CARDS
+//// ARTICLE
+.hero-card{
+  @apply flex flex-col mt-4 mb-20 text-white;
+
+  img{
+    @apply rounded-xl;
+  }
+
+  span{
+    @apply text-sm;
+  }
+}
+
+.article-card{
+  @apply flex flex-col my-4;
+
+  img{
+    @apply rounded-t-xl;
+  }
+}
+
+.tag{
+  @apply text-white py-2 px-3 rounded-xl text-xs uppercase font-semibold absolute -bottom-2.5 right-0;
+
+  &.crimson{
+    @apply bg-crimson;
+  }
+
+  &.gold{
+    @apply bg-gold;
+  }
+}
