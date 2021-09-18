@@ -1,23 +1,36 @@
-import React, {useState} from "react";
+import React from "react";
 
 //components
 import Menu from "./Menu";
 
-const DrawerMenu = props => {
+class DrawerMenu extends React.Component {
+    constructor(props){
+        super(props);
 
-    const [drawerOpening, setDrawerOpening] = useState(null);
-    const handleChange = () => {
-        props.changeDrawer(!props.openDrawer);
+        this.state={
+            drawerOpening:'',
+        }
+
+        this.handleChange = this.handleChange.bind(this);
     }
 
-    const [drawerClasses, setDrawerClasses] = useState(null);
+    handleChange(){
+        this.props.changeDrawer(!this.props.openDrawer)
+    }
 
-    props.openDrawer? (setDrawerClasses("drawer-menu")) : (setDrawerClasses("drawer-menu"));
+    render() {
 
-  return(
-      <div className={drawerClasses}>
-          <Menu />
-      </div>
-  )
+        let drawerClasses = "drawer-menu";
+
+        if(this.props.openDrawer){
+            drawerClasses = "drawer-menu open";
+        }
+
+        return (
+            <div className={drawerClasses}>
+                <Menu />
+            </div>
+        );
+    }
 }
 export default DrawerMenu;

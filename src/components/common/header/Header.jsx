@@ -23,42 +23,33 @@ const Header = () => {
         setBackdropOpening(backdropOpening);
     };
 
-    const toggleMenu = () => {
-        console.log("Sésame, ouvre-toi !")
-    };
-
   return(
-      <div className={"header container"}>
-        {/* MENU */}
-        <div className={"menu"}>
-          <FontAwesomeIcon
-              icon={faBars}
-              className="text-gray-500"
-              onClick={handleOpening}
-          />
-        </div>
+      <>
+          <div className={"header container"}>
+              {/* MENU */}
+              <div className={"menu"}>
+                  <FontAwesomeIcon
+                      icon={faBars}
+                      className="text-gray-500 invisible"
+                  />
+              </div>
 
-        {/* LOGO */}
-        <div className={"logo"}>
-         <img src={logo250} alt={"logo"} />
-        </div>
+              {/* LOGO */}
+              <div className={"logo"}>
+                  <img src={logo250} alt={"logo"} />
+              </div>
 
-        {/* SEARCH */}
-        <div className={"search"}>
-          <FontAwesomeIcon
-              icon={faSearch}
-              className="text-gray-500"
-          />
-        </div>
+              {/* SEARCH */}
+              <div className={"search"}>
+                  <FontAwesomeIcon
+                      icon={faSearch}
+                      className="text-gray-500"
+                  />
+              </div>
+          </div>
 
-          {backdropOpening ? (
-              <Backdrop openBackdrop={true} changeBackdrop={() => handleChange()} />
-          ) : null}
+      </>
 
-          {drawerOpening ? (
-              <DrawerMenu openDrawer={true} changeDrawer={() => handleChange()} />
-          ) : null}
-      </div>
   )
 }
 export default Header;

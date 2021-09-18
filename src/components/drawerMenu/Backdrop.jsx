@@ -1,17 +1,25 @@
-import React, {useState} from "react";
+import React from "react";
 
-const Backdrop = props => {
+class Backdrop extends React.Component {
+    constructor(props){
+        super(props);
 
-    const [backdropOpening, setBackdropOpening] = useState(null);
-    const handleChange = () => {
-        props.changeBackdrop(!props.openBackdrop);
+        this.state={
+            backdropOpening:'',
+        }
+
+        this.handleChange = this.handleChange.bind(this);
     }
 
-    return(
-        <>
-            <div className="backdrop" onClick={handleChange}></div>
-        </>
-    )
+    handleChange(){
+        this.props.changeBackdrop(!this.props.openBackdrop)
+    }
 
+    render() {
+        return (
+            <div className="backdrop" onClick={this.handleChange}></div>
+        );
+    }
 }
+
 export default Backdrop;
