@@ -30,24 +30,24 @@ body {
 }
 
 .app {
-  @apply w-screen min-h-screen h-auto flex-col box-border;
+  @apply w-full h-full box-border;
 }
 
 h3 {
-  @apply text-lg font-bold;
+  @apply 2xl:text-2xl xl:text-xl text-lg font-bold;
 }
 
-.header.container {
+.header.h-container {
   @apply w-full flex justify-between items-center p-4 border-b border-gray-200;
 }
 .header .menu {
   @apply w-1/5;
 }
 .header .logo {
-  @apply w-3/5 flex justify-center;
+  @apply md:w-full w-3/5 flex justify-center;
 }
 .header .logo img {
-  @apply h-12;
+  @apply md:h-20 h-12;
 }
 .header .search {
   @apply w-1/5 flex justify-end;
@@ -57,36 +57,46 @@ h3 {
   @apply flex justify-center items-center w-full;
 }
 .sportsbar button {
-  @apply bg-transparent hover:bg-white rounded-2xl py-3 px-4 mr-2 my-4 text-sm font-semibold gold;
+  @apply bg-transparent hover:bg-white rounded-2xl py-3 px-4 mr-2 my-4 xl:text-base text-sm font-semibold gold;
 }
 
 .body {
-  @apply w-full flex flex-col p-4;
+  @apply mx-auto 2xl:w-5/12 md:w-3/4 w-full flex flex-col p-4;
 }
 
 .footer {
-  @apply text-xs text-gray-400 flex justify-center;
+  @apply text-xs text-gray-400 flex justify-center mb-4;
+}
+
+.mobile-nav {
+  @apply fixed bottom-0 z-50 bg-white w-full p-4 flex justify-evenly items-center;
+}
+.mobile-nav a {
+  @apply text-gray-400;
+}
+.mobile-nav a:hover {
+  @apply gold;
+}
+.mobile-nav a.active {
+  @apply crimson;
 }
 
 .hero-card {
   @apply flex flex-col mt-4 mb-20 text-white;
 }
 .hero-card img {
-  @apply rounded-xl;
-}
-.hero-card span {
-  @apply text-sm;
+  @apply rounded-xl xl:h-96 h-64 md:w-full w-96 object-center object-cover;
 }
 
 .article-card {
   @apply flex flex-col my-4;
 }
 .article-card img {
-  @apply rounded-t-xl;
+  @apply rounded-t-xl xl:h-96 h-64 md:w-full w-96 object-center object-cover;
 }
 
 .tag {
-  @apply text-white py-2 px-3 rounded-xl text-xs uppercase font-semibold absolute -bottom-2.5 right-0;
+  @apply text-white md:px-4 md:py-3 py-2 px-3 rounded-xl md:text-sm text-xs uppercase font-semibold absolute -bottom-2.5 right-0;
 }
 .tag.crimson {
   @apply bg-crimson;

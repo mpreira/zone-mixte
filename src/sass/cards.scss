@@ -1,0 +1,29 @@
+//CARDS
+//// ARTICLE
+.hero-card{
+  @apply flex flex-col mt-4 mb-20 text-white;
+
+  img{
+    @apply rounded-xl xl:h-96 h-64 md:w-full w-96 object-center object-cover;
+  }
+}
+
+.article-card{
+  @apply flex flex-col my-4;
+
+  img{
+    @apply rounded-t-xl xl:h-96 h-64 md:w-full w-96 object-center object-cover;
+  }
+}
+
+.tag{
+  @apply text-white md:px-4 md:py-3 py-2 px-3 rounded-xl md:text-sm text-xs uppercase font-semibold absolute -bottom-2.5 right-0;
+
+  &.crimson{
+    @apply bg-crimson;
+  }
+
+  &.gold{
+    @apply bg-gold;
+  }
+}

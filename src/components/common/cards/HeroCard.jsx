@@ -8,7 +8,6 @@ const HeroCard = props => {
                 <img
                     src={props.src}
                     alt={""}
-                    className="w-full h-1/2 object-cover object-center"
                 />
                 <span className="tag gold">{props.sportTag}</span>
             </div>

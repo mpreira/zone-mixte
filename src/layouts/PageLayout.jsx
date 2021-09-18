@@ -1,7 +1,7 @@
 import React, {Component} from "react";
 import {Route} from "react-router-dom";
-import Header from "../components/common/header/Header";
-import Footer from "../components/common/footer/Footer";
+import Header from "../components/header/Header";
+import Footer from "../components/footer/Footer";
 
 const PageLayout = ({children}) => {
     return(

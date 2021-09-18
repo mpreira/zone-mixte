@@ -1,57 +1,51 @@
-import React, {Component, useState} from "react";
+import React, {Component, useState, useEffect} from "react";
 import {Route} from "react-router-dom";
-import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
-import {faBars} from "@fortawesome/free-solid-svg-icons";
 
 //components
-import Backdrop from '../components/drawerMenu/Backdrop';
-import DrawerMenu from "../components/drawerMenu/DrawerMenu";
-import Header from "../components/common/header/Header";
+import Header from "../components/header/Header";
 import Sportsbar from '../components/common/sportsBar/SportsBar';
-import Footer from "../components/common/footer/Footer";
+import Footer from "../components/footer/Footer";
+import MobileNav from "../components/nav/MobileNav";
 
 const HomeLayout = ({children}) => {
 
-    /*toggle menu*/
-    const [drawerOpening, setDrawerOpening] = useState(false);
-    const [backdropOpening, setBackdropOpening] = useState(false);
+    const [isXLarge, setIsXLarge] = useState(window.innerWidth >= 1280);
 
-    const handleOpening = () => {
-        setDrawerOpening(true);
-        setBackdropOpening(true);
-        console.log("click !")
+    const updateMedia = () => {
+        setIsXLarge(window.innerWidth >= 1280);
     };
 
-    const handleChange = (drawerOpening, backdropOpening) => {
-        setDrawerOpening(drawerOpening);
-        setBackdropOpening(backdropOpening);
-    };
+    useEffect(() => {
+        window.addEventListener("resize", updateMedia);
+        return () => window.removeEventListener("resize", updateMedia);
+    });
 
-    return(
+    return isXLarge? (
+        <div className="app">
+
+                <Header />
+                <Sportsbar />
+                <div className="flex">
+                    <div className="2xl:w-96 w-80 bg-white">nav</div>
+                    {children}
+                    <div className="2xl:w-96 w-80 bg-white">chrono</div>
+                </div>
+                <Footer />
+
+
+        </div>
+        ) : (
         <>
             <div className="app">
-                <div className="flex">
-                    <button className={"menu"}>
-                        <FontAwesomeIcon
-                            icon={faBars}
-                            className="text-gray-500 absolute top-8 left-8"
-                            onClick={() => handleOpening()}
-                        />
-                    </button>
+                <MobileNav />
+                <div>
                     <Header />
+                    <Sportsbar />
+                    {children}
+                    <Footer />
                 </div>
 
-                <Sportsbar />
-                {children}
-                <Footer />
             </div>
-            {backdropOpening ? (
-                <Backdrop openBackdrop={true} changeBackdrop={() => handleChange()} />
-            ) : null}
-
-            {drawerOpening ? (
-                <DrawerMenu openDrawer={true} changeDrawer={() => handleChange()} />
-            ) : null}
         </>
 
 

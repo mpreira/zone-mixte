@@ -4,11 +4,11 @@ body{
 }
 
 .app{
-  @apply w-screen min-h-screen h-auto flex-col box-border;
+  @apply w-full h-full box-border;
 }
 
 
 // TITRES
 h3{
-  @apply text-lg font-bold;
+  @apply 2xl:text-2xl xl:text-xl text-lg font-bold;
 }

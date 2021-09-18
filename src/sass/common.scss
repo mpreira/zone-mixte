@@ -1,6 +1,6 @@
 // HEADER
 .header{
-  &.container{
+  &.h-container{
     @apply w-full flex justify-between items-center p-4 border-b border-gray-200;
   }
 
@@ -9,10 +9,10 @@
   }
 
   .logo{
-    @apply w-3/5 flex justify-center;
+    @apply md:w-full w-3/5 flex justify-center;
 
     img{
-      @apply h-12;
+      @apply md:h-20 h-12;
     }
   }
 
@@ -26,50 +26,16 @@
   @apply flex justify-center items-center w-full;
 
   button{
-    @apply bg-transparent hover:bg-white rounded-2xl py-3 px-4 mr-2 my-4 text-sm font-semibold gold;
+    @apply bg-transparent hover:bg-white rounded-2xl py-3 px-4 mr-2 my-4 xl:text-base text-sm font-semibold gold;
   }
 }
 
 //BODY
 .body{
-  @apply w-full flex flex-col p-4;
+  @apply mx-auto 2xl:w-5/12 md:w-3/4 w-full flex flex-col p-4;
 }
 
 // FOOTER
 .footer{
-  @apply text-xs text-gray-400 flex justify-center;
-}
-
-//CARDS
-//// ARTICLE
-.hero-card{
-  @apply flex flex-col mt-4 mb-20 text-white;
-
-  img{
-    @apply rounded-xl;
-  }
-
-  span{
-    @apply text-sm;
-  }
-}
-
-.article-card{
-  @apply flex flex-col my-4;
-
-  img{
-    @apply rounded-t-xl;
-  }
-}
-
-.tag{
-  @apply text-white py-2 px-3 rounded-xl text-xs uppercase font-semibold absolute -bottom-2.5 right-0;
-
-  &.crimson{
-    @apply bg-crimson;
-  }
-
-  &.gold{
-    @apply bg-gold;
-  }
+  @apply text-xs text-gray-400 flex justify-center mb-4;
 }
