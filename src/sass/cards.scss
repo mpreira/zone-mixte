@@ -4,15 +4,15 @@
   @apply flex flex-col mt-4 mb-20 text-white;
 
   img{
-    @apply rounded-xl xl:h-96 h-64 md:w-full w-96 object-center object-cover;
+    @apply rounded-xl 2xl:h-96 xl:h-72 h-64 md:w-full w-96 object-center object-cover;
   }
 }
 
 .article-card{
-  @apply flex flex-col my-4;
+  @apply flex flex-col my-16;
 
   img{
-    @apply rounded-t-xl xl:h-96 h-64 md:w-full w-96 object-center object-cover;
+    @apply rounded-t-xl 2xl:h-96 xl:h-72 h-64 md:w-full w-96 object-center object-cover;
   }
 }
 

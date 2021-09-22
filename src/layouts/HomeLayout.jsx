@@ -5,7 +5,9 @@ import {Route} from "react-router-dom";
 import Header from "../components/header/Header";
 import Sportsbar from '../components/common/sportsBar/SportsBar';
 import Footer from "../components/footer/Footer";
+import Nav from "../components/nav/Nav";
 import MobileNav from "../components/nav/MobileNav";
+import Timeline from "../components/timeline/Timeline";
 
 const HomeLayout = ({children}) => {
 
@@ -22,33 +24,25 @@ const HomeLayout = ({children}) => {
 
     return isXLarge? (
         <div className="app">
-
-                <Header />
-                <Sportsbar />
-                <div className="flex">
-                    <div className="2xl:w-96 w-80 bg-white">nav</div>
-                    {children}
-                    <div className="2xl:w-96 w-80 bg-white">chrono</div>
-                </div>
-                <Footer />
-
-
+            <Header />
+            <Sportsbar />
+            <div className="flex 2xl:justify-between">
+                <Nav />
+                {children}
+                <Timeline />
+            </div>
+            <Footer />
         </div>
         ) : (
-        <>
-            <div className="app">
-                <MobileNav />
-                <div>
-                    <Header />
-                    <Sportsbar />
-                    {children}
-                    <Footer />
-                </div>
-
+        <div className="app">
+            <MobileNav />
+            <div>
+                <Header />
+                <Sportsbar />
+                {children}
+                <Footer />
             </div>
-        </>
-
-
+        </div>
     )
 }
 

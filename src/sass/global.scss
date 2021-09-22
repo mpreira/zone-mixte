@@ -9,6 +9,11 @@ body{
 
 
 // TITRES
+h2{
+  border-bottom: 1px solid #fe9f33;
+  @apply 2xl:text-2xl xl:text-xl font-bold crimson pb-2;
+}
+
 h3{
   @apply 2xl:text-2xl xl:text-xl text-lg font-bold;
 }

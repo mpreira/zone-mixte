@@ -1,11 +1,13 @@
 import React from "react";
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 import {faUserSecret, faSearch} from "@fortawesome/free-solid-svg-icons";
+import {faFacebook, faTwitter, faInstagram} from "@fortawesome/free-brands-svg-icons";
 
 //components
 import {logo250} from "../../images";
 import Backdrop from '../drawerMenu/Backdrop';
 import DrawerMenu from "../drawerMenu/DrawerMenu";
+import {Link} from "react-router-dom";
 
 const Header = () => {
 
@@ -13,7 +15,7 @@ const Header = () => {
       <>
           <div className={"header h-container"}>
               {/* MENU */}
-              <div className={"menu"}>
+              <div className={"search"}>
                   <FontAwesomeIcon
                       icon={faSearch}
                       className="text-gray-500 invisible"
@@ -26,11 +28,26 @@ const Header = () => {
               </div>
 
               {/* SEARCH */}
-              <div className={"search"}>
-                  <FontAwesomeIcon
-                      icon={faUserSecret}
-                      className="text-gray-500 invisible"
-                  />
+              <div className={"menu"}>
+                  <Link to={"#"}>
+                      <FontAwesomeIcon icon={faFacebook} className="fa-lg" />
+                  </Link>
+
+                  <Link to={"#"}>
+                      <FontAwesomeIcon icon={faTwitter} className="fa-lg" />
+                  </Link>
+
+                  <Link to={"#"}>
+                      <FontAwesomeIcon icon={faInstagram} className="fa-lg" />
+                  </Link>
+
+                  <Link to={"#"}>
+                      <FontAwesomeIcon
+                          icon={faUserSecret}
+                          className="text-gray-500 invisible"
+                      />
+                  </Link>
+
               </div>
           </div>
 
