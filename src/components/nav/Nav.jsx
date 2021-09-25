@@ -37,17 +37,38 @@ const Nav = () => {
                   <span>Catégories</span>
               </Link>
 
-              <Link to={"#"}>
+              <Link
+                  to={"/articles"}
+                  className={
+                      splitLocation[1] === "articles"
+                          ? "active"
+                          : ""
+                  }
+              >
                   <FontAwesomeIcon icon={faNewspaper} />
                   <span>Articles</span>
               </Link>
 
-              <Link to={"#"}>
+              <Link
+                  to={"/videos"}
+                  className={
+                      splitLocation[1] === "videos"
+                          ? "active"
+                          : ""
+                  }
+              >
                   <FontAwesomeIcon icon={faVideo} />
                   <span>Vidéos</span>
               </Link>
 
-              <Link to={"#"}>
+              <Link
+                  to={"/chrono"}
+                  className={
+                      splitLocation[1] === "chrono"
+                          ? "active"
+                          : ""
+                  }
+              >
                   <FontAwesomeIcon icon={faClock} />
                   <span>Dernières infos</span>
               </Link>

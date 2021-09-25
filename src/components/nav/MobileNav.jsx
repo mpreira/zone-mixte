@@ -38,19 +38,40 @@ const MobileNav = () => {
                   className="fa-lg"
               />
           </Link>
-          <Link to={"#"}>
+          <Link
+              to={"/articles"}
+              className={
+                  splitLocation[1] === "articles"
+                      ? "active"
+                      : ""
+              }
+          >
               <FontAwesomeIcon
                   icon={faNewspaper}
                   className="fa-lg"
               />
           </Link>
-          <Link to={"#"}>
+          <Link
+              to={"/videos"}
+              className={
+                  splitLocation[1] === "videos"
+                      ? "active"
+                      : ""
+              }
+          >
               <FontAwesomeIcon
                   icon={faVideo}
                   className="fa-lg"
               />
           </Link>
-          <Link to={"#"}>
+          <Link
+              to={"/chrono"}
+              className={
+                  splitLocation[1] === "chrono"
+                      ? "active"
+                      : ""
+              }
+          >
               <FontAwesomeIcon
                   icon={faClock}
                   className="fa-lg"

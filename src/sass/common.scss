@@ -45,7 +45,11 @@
 
 // TIMELINE
 .timeline{
-  @apply p-8 my-8 2xl:w-96 w-72 border-l-2 border-gray-200 text-gray-500;
+  @apply text-gray-500;
+
+  h2{
+    border-bottom: 1px solid #fe9f33;
+  }
 }
 
 .timeline-container{

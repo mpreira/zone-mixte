@@ -1,15 +1,15 @@
 import React, {Component, useState, useEffect} from "react";
-import {Route} from "react-router-dom";
+import {Route, useRouteMatch} from "react-router-dom";
 
 //components
 import Header from "../components/header/Header";
 import Sportsbar from '../components/common/sportsBar/SportsBar';
-import Footer from "../components/footer/Footer";
 import Nav from "../components/nav/Nav";
 import MobileNav from "../components/nav/MobileNav";
+import Footer from "../components/footer/Footer";
 import Timeline from "../components/home/timeline/Timeline";
 
-const HomeLayout = ({children}) => {
+const CategoriesLayout = ({children}) => {
 
     const [isXLarge, setIsXLarge] = useState(window.innerWidth >= 1280);
 
@@ -25,7 +25,6 @@ const HomeLayout = ({children}) => {
     return isXLarge? (
         <div className="app">
             <Header />
-            <Sportsbar />
             <div className="flex 2xl:justify-between">
                 <Nav />
                 {children}
@@ -33,12 +32,11 @@ const HomeLayout = ({children}) => {
             </div>
             <Footer />
         </div>
-        ) : (
+    ) : (
         <div className="app">
             <MobileNav />
             <div>
                 <Header />
-                <Sportsbar />
                 {children}
                 <Footer />
             </div>
@@ -46,14 +44,14 @@ const HomeLayout = ({children}) => {
     )
 }
 
-const HomeLayoutRoute = ({component: Component, ...rest}) => {
+const CategoriesLayoutRoute = ({component: Component, ...rest}) => {
     return (
         <Route {...rest} render={matchProps => (
-            <HomeLayout>
+            <CategoriesLayout>
                 <Component {...matchProps} />
-            </HomeLayout>
+            </CategoriesLayout>
         )} />
     )
 };
 
-export default HomeLayoutRoute;
+export default CategoriesLayoutRoute;

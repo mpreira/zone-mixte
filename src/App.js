@@ -5,12 +5,18 @@ import axios from "axios";
 
 //layouts
 import HomeLayoutRoute from "./layouts/HomeLayout";
+import CategoriesLayoutRoute from "./layouts/CategoriesLayout";
 import PageLayoutRoute from "./layouts/PageLayout";
 
 //components
+import NotFound from "./components/404notfound/NotFound";
+import Unavailable from "./components/404notfound/Unavailable";
+
 import Home from "./components/home/Home";
 import Categories from "./components/Categories/Categories";
+import Articles from "./components/articles/Articles";
 import Videos from "./components/videos/Videos";
+import Timeline from './components/timeline/Timeline';
 
 function App() {
 
@@ -30,8 +36,13 @@ function App() {
                 <Redirect to="/accueil" />
             </Route>
             <HomeLayoutRoute path="/accueil" component={Home} />
-            <PageLayoutRoute path="/categories" component={Categories} />
+            <CategoriesLayoutRoute path="/categories" component={Categories} />
+            <PageLayoutRoute path="/articles" component={Articles} />
             <PageLayoutRoute path="/videos" component={Videos} />
+            <PageLayoutRoute path="/chrono" component={Timeline} />
+
+            <PageLayoutRoute path="*" component={NotFound} />
+            <PageLayoutRoute path="/indisponible" component={Unavailable} />
         </Switch>
     </Router>
   );

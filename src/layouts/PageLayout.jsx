@@ -7,7 +7,7 @@ import Sportsbar from '../components/common/sportsBar/SportsBar';
 import Nav from "../components/nav/Nav";
 import MobileNav from "../components/nav/MobileNav";
 import Footer from "../components/footer/Footer";
-import Timeline from "../components/timeline/Timeline";
+import Timeline from "../components/home/timeline/Timeline";
 
 const PageLayout = ({children}) => {
 
@@ -37,8 +37,7 @@ const PageLayout = ({children}) => {
             <MobileNav />
             <div>
                 <Header />
-                {/*affichage conditionnel à venir*/}
-                {/*<Sportsbar />*/}
+                <Sportsbar />
                 {children}
                 <Footer />
             </div>
