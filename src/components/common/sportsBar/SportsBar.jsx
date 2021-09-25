@@ -3,9 +3,12 @@ import React from "react";
 const SportsBar = () => {
 
     const sports = [
-        {id: 1, name: 'Rugby'},
-        {id:2, name: 'Football'},
-        {id:3, name: 'Basket'}
+        {id: 1, name: 'Football'},
+        {id:2, name: 'Rugby'},
+        {id:3, name: 'Basketball'},
+        {id:4, name: 'Tennis'},
+        {id:5, name: 'Handball'},
+        {id:6, name: 'Judo'},
     ];
 
     const displaySports =

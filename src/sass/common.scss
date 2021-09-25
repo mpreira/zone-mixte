@@ -5,10 +5,10 @@
   }
 
   .menu{
-    @apply w-1/5;
+    @apply w-1/5 flex md:flex-row flex-col md:items-center items-end justify-center md:visible invisible;
 
     a{
-      @apply text-gray-400 mx-2;
+      @apply text-gray-400 mx-2 mb-2;
 
       &:hover{
         @apply crimson;
@@ -31,7 +31,7 @@
 
 // SPORTSBAR
 .sportsbar{
-  @apply flex justify-center items-center w-full;
+  @apply flex justify-center items-center w-full overflow-x-auto;
 
   button{
     @apply bg-transparent hover:bg-white rounded-2xl py-3 px-4 mr-2 my-4 xl:text-base text-sm font-semibold gold;
@@ -80,5 +80,5 @@
 
 // FOOTER
 .footer{
-  @apply text-xs text-gray-400 flex justify-center mb-4 mt-8;
+  @apply text-xs text-gray-400 flex flex-col w-full justify-center mb-16 md:mt-8 mt-0;
 }

@@ -1,7 +1,7 @@
 //CARDS
 //// ARTICLE
 .hero-card{
-  @apply flex flex-col mt-4 mb-20 text-white;
+  @apply flex flex-col mt-4 md:mb-20 mb-10 text-white;
 
   img{
     @apply rounded-xl 2xl:h-96 xl:h-72 h-64 md:w-full w-96 object-center object-cover;
@@ -9,7 +9,7 @@
 }
 
 .article-card{
-  @apply flex flex-col my-16;
+  @apply flex flex-col md:my-16 my-8;
 
   img{
     @apply rounded-t-xl 2xl:h-96 xl:h-72 h-64 md:w-full w-96 object-center object-cover;
