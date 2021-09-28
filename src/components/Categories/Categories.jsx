@@ -12,7 +12,6 @@ const Categories = () => {
                 .get("/sports")
                 .then((response) =>{
                     setSports(response.data);
-                    console.log(response.data);
                 })
                 .catch((err) => {
                     console.log(err);

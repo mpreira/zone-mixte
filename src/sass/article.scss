@@ -1,0 +1,15 @@
+.article{
+  @apply mt-12;
+
+  h2{
+    @apply lg:text-3xl text-2xl self-start lg:mt-4 mt-2;
+  }
+
+  .details{
+    @apply mt-1 w-full flex justify-between text-gray-500 italic text-xs;
+  }
+
+  .content{
+    @apply text-justify my-8 lg:mx-0 mx-4;
+  }
+}

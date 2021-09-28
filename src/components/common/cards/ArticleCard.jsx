@@ -19,7 +19,7 @@ const ArticleCard = props => {
           </div>
 
           <div className={props.classes}>
-              <Link to={"#"}><h3>{props.title}</h3></Link>
+              <Link to={props.url}><h3>{props.title}</h3></Link>
               <Moment
                   className="text-xs text-gray-400"
                   fromNow

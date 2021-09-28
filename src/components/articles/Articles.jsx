@@ -1,47 +1,57 @@
-import React from "react";
+import React, {useEffect, useState} from "react";
+import {instance as axios} from "../../config/axiosConfig";
+import {Link, useParams, useRouteMatch, Route, Switch} from "react-router-dom";
 
 //components
 import ArticleCard from "../common/cards/ArticleCard";
-import {Sport1, Sport2, Sport3, Sport4} from '../../images/index';
+import ArticleView from "./ArticleView";
 
 const Articles = () => {
 
+    const [articles, setArticles] = useState([]);
+
+    useEffect( () => {
+        const fetchArticles = async() => {
+            await axios
+                .get("/articles")
+                .then((response) => {
+                    setArticles(response.data);
+                })
+                .catch((err) => {
+                    console.log(err);
+                })
+        }
+        fetchArticles();
+    }, []);
+
+    const displayArticles =
+        articles.map((article, i) => (
+            <ArticleCard
+                src={article.image}
+                title={article.title}
+                author={article.user_id}
+                sportTag={article.sport_id}
+                classes={"bg-white p-4"}
+                url={`/articles/${article.sport_id}`}
+            />
+        ))
+    ;
+
+    let { path, url } = useRouteMatch();
+
     return(
-        <div className="body">
-            <h2>Articles</h2>
+        <Switch>
+            <Route exact path={path}>
+                <div className="body">
+                    <h2>Articles</h2>
 
-            <ArticleCard
-                src={Sport1}
-                title={"In hac habitasse platea dictumst. Etiam arcu. "}
-                author={"prénom nom"}
-                sportTag={"sport"}
-                classes={"bg-white p-4"}
-            />
-
-            <ArticleCard
-                src={Sport2}
-                title={"In hac habitasse platea dictumst. Etiam arcu. "}
-                author={"prénom nom"}
-                sportTag={"sport"}
-                classes={"bg-white p-4"}
-            />
-
-            <ArticleCard
-                src={Sport3}
-                title={"Cras facilisis sollicitudin ornare. Maecenas vitae egestas."}
-                author={"prénom nom"}
-                sportTag={"sport"}
-                classes={"bg-white p-4"}
-            />
-
-            <ArticleCard
-                src={Sport4}
-                title={"Proin pretium mi et massa egestas, non. "}
-                author={"prénom nom"}
-                sportTag={"sport"}
-                classes={"bg-white p-4"}
-            />
-        </div>
+                    {displayArticles}
+                </div>
+            </Route>
+            <Route path={`${path}/:articleId`}>
+                <ArticleView articles={articles} />
+            </Route>
+        </Switch>
     )
 }
 export default Articles;

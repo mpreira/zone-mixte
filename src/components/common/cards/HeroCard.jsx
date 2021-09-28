@@ -14,7 +14,7 @@ const HeroCard = props => {
 
 
             <div className={props.classes}>
-                <Link to={"#"}><h3>{props.title}</h3></Link>
+                <Link to={props.url}><h3>{props.title}</h3></Link>
             </div>
 
         </div>
