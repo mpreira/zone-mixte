@@ -1,5 +1,5 @@
 .article{
-  @apply mt-12;
+  @apply mt-12 2xl:ml-72 xl:ml-60 md:mx-auto ml-0;
 
   h2{
     @apply lg:text-3xl text-2xl self-start lg:mt-4 mt-2;

@@ -1,7 +1,6 @@
-import React, {useEffect, useState} from "react";
+import React, {useEffect} from "react";
 import { BrowserRouter as Router, Route, Redirect, Switch } from 'react-router-dom';
 import WebFont from 'webfontloader';
-import axios from "axios";
 
 //layouts
 import HomeLayoutRoute from "./layouts/HomeLayout";

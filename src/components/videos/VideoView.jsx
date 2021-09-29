@@ -8,19 +8,20 @@ import {faPaperPlane, faShare} from "@fortawesome/free-solid-svg-icons";
 //components
 import NotFound from "../404notfound/NotFound";
 import Loader from "../common/Loader";
+import Comments from "../comments/Comments";
 import GoBackButton from "../common/GoBackButton";
 
-const ArticleView = ({articles}) => {
+const VideoView = ({videos}) => {
 
-    let { articleId } = useParams();
+    let { videoId } = useParams();
     const [selected, setSelected] = useState({});
     const [loading, setLoading] = useState(true);
     const [notFound, setNotFound] = useState(false);
 
     useEffect(() => {
-        if (articleId) {
+        if (videoId) {
             axios
-                .get(`/articles/${articleId}`)
+                .get(`/videos/${videoId}`)
                 .then((response) => {
                     setSelected(response.data);
                     setNotFound(false);
@@ -33,7 +34,7 @@ const ArticleView = ({articles}) => {
                     console.log(err);
                 });
         }
-    }, [articleId]);
+    }, [videoId]);
 
     return !loading? (!notFound ?(
         <>
@@ -41,7 +42,7 @@ const ArticleView = ({articles}) => {
 
             <div className="body article">
                 <div className="flex flex-col items-center">
-                    <img src={selected.image} alt="" />
+                    <img src={selected.video} alt="" />
 
                     <h2>{selected.title}</h2>
 
@@ -60,7 +61,11 @@ const ArticleView = ({articles}) => {
                     </div>
 
                     <div className="content">
-                        {selected.content}
+                        {selected.summary}
+                    </div>
+
+                    <div className="flex flex-col w-full mt-16">
+                        <Comments selected={selected} />
                     </div>
 
                 </div>
@@ -68,4 +73,4 @@ const ArticleView = ({articles}) => {
         </>
     ) : <NotFound />) : (<Loader />)
 }
-export default ArticleView;
+export default VideoView;

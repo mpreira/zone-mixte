@@ -1,9 +1,8 @@
-import React, {Component, useState, useEffect} from "react";
-import {Route, useRouteMatch} from "react-router-dom";
+import React, {useState, useEffect} from "react";
+import {Route} from "react-router-dom";
 
 //components
 import Header from "../components/header/Header";
-import Sportsbar from '../components/common/sportsBar/SportsBar';
 import Nav from "../components/nav/Nav";
 import MobileNav from "../components/nav/MobileNav";
 import Footer from "../components/footer/Footer";

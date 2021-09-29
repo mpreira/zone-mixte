@@ -11,7 +11,7 @@
       @apply text-gray-400 mx-2 mb-2;
 
       &:hover{
-        @apply crimson;
+        @apply text-crimson;
       }
     }
   }
@@ -34,7 +34,7 @@
   @apply flex justify-center items-center w-full overflow-x-auto;
 
   button{
-    @apply bg-transparent hover:bg-white rounded-2xl py-3 px-4 mr-2 my-4 xl:text-base text-sm font-semibold gold;
+    @apply bg-transparent hover:bg-white rounded-2xl py-3 px-4 mr-2 my-4 xl:text-base text-sm font-semibold text-gold;
   }
 }
 
@@ -48,7 +48,7 @@
   @apply text-gray-500;
 
   h2{
-    border-bottom: 1px solid #fe9f33;
+    @apply border-b border-gold;
   }
 }
 

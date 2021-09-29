@@ -1,46 +1,56 @@
-import React from "react";
+import React, {useEffect, useState} from "react";
+import {instance as axios} from "../../config/axiosConfig";
+import {useRouteMatch, Route, Switch} from "react-router-dom";
 
 //components
-import ArticleCard from "../common/cards/ArticleCard";
-import {Sport1, Sport2, Sport3, Sport4} from "../../images";
+import VideoCard from "../common/cards/VideoCard";
+import VideoView from './VideoView';
 
 const Videos = () => {
+
+    const [videos, setVideos] = useState([]);
+    let { path } = useRouteMatch();
+
+    useEffect( () => {
+        const fetchVideos = async() => {
+            await axios
+                .get("/videos")
+                .then((response) => {
+                    setVideos(response.data);
+                })
+                .catch((err) => {
+                    console.log(err);
+                })
+        } ;
+        fetchVideos();
+    }, []);
+
+    const displayVideos =
+        videos.map((video, i) => (
+            <VideoCard
+                src={video.video}
+                title={video.title}
+                author={video.user_id}
+                sportTag={video.sport.name}
+                classes={"bg-white p-4"}
+                url={`${path}/${video.id}`}
+            />
+        ))
+    ;
+
   return(
-      <div className="body">
-          <h2>Vidéos</h2>
+      <Switch>
+          <Route exact path={path}>
+              <div className="body">
+                  <h2>Vidéos</h2>
 
-          <ArticleCard
-              src={Sport1}
-              title={"In hac habitasse platea dictumst. Etiam arcu. "}
-              author={"prénom nom"}
-              sportTag={"sport"}
-              classes={"bg-white p-4"}
-          />
-
-          <ArticleCard
-              src={Sport2}
-              title={"In hac habitasse platea dictumst. Etiam arcu. "}
-              author={"prénom nom"}
-              sportTag={"sport"}
-              classes={"bg-white p-4"}
-          />
-
-          <ArticleCard
-              src={Sport3}
-              title={"Cras facilisis sollicitudin ornare. Maecenas vitae egestas."}
-              author={"prénom nom"}
-              sportTag={"sport"}
-              classes={"bg-white p-4"}
-          />
-
-          <ArticleCard
-              src={Sport4}
-              title={"Proin pretium mi et massa egestas, non. "}
-              author={"prénom nom"}
-              sportTag={"sport"}
-              classes={"bg-white p-4"}
-          />
-      </div>
+                  {displayVideos}
+              </div>
+          </Route>
+          <Route path={`${path}/:videoId`}>
+              <VideoView videos={videos} />
+          </Route>
+      </Switch>
   )
 }
 export default Videos;

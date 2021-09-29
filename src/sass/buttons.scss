@@ -1,0 +1,40 @@
+.button{
+  @apply py-3 px-6 rounded-full text-xs my-2;
+
+  &.button-primary{
+    @apply bg-crimson shadow text-white font-semibold outline-none;
+
+    &:hover{
+      @apply bg-white ring-2 ring-crimson text-crimson;
+    }
+  }
+
+  &.button-secondary {
+    @apply bg-gold shadow text-white font-semibold outline-none;
+
+    &:hover {
+      @apply bg-gold ring-2 ring-gold text-gold;
+    }
+  }
+}
+
+// BOUTONS ICONS
+.button-icon{
+  @apply rounded-full h-8 w-8 flex items-center justify-center;
+
+  &.icon-primary{
+    @apply bg-crimson shadow text-white outline-none;
+
+    &:hover{
+      @apply bg-white ring-2 ring-crimson text-crimson;
+    }
+  }
+
+  &.icon-secondary{
+    @apply bg-gold shadow text-white font-semibold outline-none;
+
+    &:hover {
+      @apply bg-gold ring-2 ring-gold text-gold;
+    }
+  }
+}

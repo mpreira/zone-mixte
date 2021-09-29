@@ -36,7 +36,7 @@ const Categories = () => {
     ;
 
   return(
-      <div className="body min-h-screen h-auto">
+      <div className="body min-h-screen h-full">
           <h2>Catégories</h2>
           {displaySports}
       </div>

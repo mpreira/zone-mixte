@@ -1,6 +1,6 @@
 import React from "react";
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
-import {faCompass, faNewspaper, faPlayCircle, faClock} from "@fortawesome/free-regular-svg-icons";
+import {faCompass, faNewspaper, faClock} from "@fortawesome/free-regular-svg-icons";
 import {faVideo, faHome} from "@fortawesome/free-solid-svg-icons";
 import {Link, useLocation} from "react-router-dom";
 

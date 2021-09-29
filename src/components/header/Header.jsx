@@ -5,8 +5,6 @@ import {faFacebook, faTwitter, faInstagram} from "@fortawesome/free-brands-svg-i
 
 //components
 import {logo250} from "../../images";
-import Backdrop from '../drawerMenu/Backdrop';
-import DrawerMenu from "../drawerMenu/DrawerMenu";
 import {Link} from "react-router-dom";
 
 const Header = () => {

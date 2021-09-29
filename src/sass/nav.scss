@@ -7,11 +7,11 @@
     @apply text-gray-400;
 
     &:hover{
-      @apply gold;
+      @apply text-gold;
     }
 
     &.active{
-      @apply crimson;
+      @apply text-crimson;
     }
   }
 }
@@ -28,11 +28,11 @@
     @apply text-gray-400 my-2 pb-4 w-full border-b border-gray-200 font-medium;
 
     &:hover{
-      @apply gold;
+      @apply text-gold;
     }
 
     &.active{
-      @apply crimson;
+      @apply text-crimson;
     }
   }
 }

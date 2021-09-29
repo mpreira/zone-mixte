@@ -5,6 +5,10 @@ module.exports = {
     extend: {
       zIndex:{
         '-10': '-10'
+      },
+      colors:{
+        'crimson': '#a20c38',
+        'gold': '#fe9f33',
       }
     },
   },

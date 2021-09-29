@@ -1,6 +1,6 @@
 import React, {useEffect, useState} from "react";
 import {instance as axios} from "../../config/axiosConfig";
-import {Link, useParams, useRouteMatch, Route, Switch} from "react-router-dom";
+import {useRouteMatch, Route, Switch} from "react-router-dom";
 
 //components
 import ArticleCard from "../common/cards/ArticleCard";
@@ -24,20 +24,21 @@ const Articles = () => {
         fetchArticles();
     }, []);
 
+
     const displayArticles =
         articles.map((article, i) => (
             <ArticleCard
                 src={article.image}
                 title={article.title}
                 author={article.user_id}
-                sportTag={article.sport_id}
+                sportTag={article.sport.name}
                 classes={"bg-white p-4"}
-                url={`/articles/${article.sport_id}`}
+                url={`/articles/${article.id}`}
             />
         ))
     ;
 
-    let { path, url } = useRouteMatch();
+    let { path } = useRouteMatch();
 
     return(
         <Switch>
