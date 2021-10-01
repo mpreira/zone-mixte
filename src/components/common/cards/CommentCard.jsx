@@ -13,7 +13,7 @@ const CommentCard = ({selected}) => {
                                 key={i}
                                 className="comments"
                             >
-                                <div className="flex justify-between items-center text-xs text-gray-400 italic w-full">
+                                <div className="comment-username">
                                     <span>
                                         {comment.username}
                                     </span>

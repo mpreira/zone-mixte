@@ -48,15 +48,15 @@ const VideoView = ({videos}) => {
 
                     <div className="details">
                         <span>publié par {selected.user.username} le <Moment format="L">{selected.created_at}</Moment></span>
-                        <span>mis à jour le <Moment format="L">{selected.updated_at}</Moment></span>
+                        <span className="text-right">mis à jour le <Moment format="L">{selected.updated_at}</Moment></span>
                     </div>
 
-                    <div className="flex justify-end w-full mt-2 text-gray-400">
+                    <div className="flex justify-end w-full mt-4 text-gray-400">
                         <button className="button-icon icon-primary mr-2">
-                            <FontAwesomeIcon icon={faPaperPlane} className="" />
+                            <FontAwesomeIcon icon={faPaperPlane} className="fa-xs" />
                         </button>
                         <button className="button-icon icon-primary mr-2">
-                            <FontAwesomeIcon icon={faShare} />
+                            <FontAwesomeIcon icon={faShare} className="fa-xs" />
                         </button>
                     </div>
 

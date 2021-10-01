@@ -1,9 +1,9 @@
-import React, {useEffect, useState} from "react";
+import React, {useState} from "react";
 import {instance as axios} from "../../config/axiosConfig";
 
 //components
 import CommentCard from "../common/cards/CommentCard";
-import {Redirect} from "react-router-dom";
+import {useLocation} from "react-router-dom";
 
 const Comments = ({selected}) => {
 
@@ -26,6 +26,7 @@ const postComment = async() => {
             }
             setData(response.data);
             console.log(response.data);
+            window.location.reload();
         })
         .catch((err) => {
             console.log(err);
@@ -37,22 +38,24 @@ const postComment = async() => {
         console.log("commentaire soumis");
     }
 
-    return isSuccessful?(
-        <Redirect to={`/videos/${selected.id}`} />
-    ) : (
+    let location = useLocation();
+
+    return (
         <>
             <h3 className="text-gold">Commentaires</h3>
             <form onSubmit={handleSubmit}>
                 <div>
-                    <label htmlFor="comment-username"></label>
+                    <label htmlFor="comment-username">Nom d'utilisateur</label>
                     <input
                         type="text"
+                        className="w-full"
                         name="username"
                         onChange={handleChange}
                         value={data.username}
                         id="comment-username"
                     />
                 </div>
+                <label htmlFor="comment-message">Votre commentaire</label>
                 <textarea
                     className="textarea"
                     name="message"

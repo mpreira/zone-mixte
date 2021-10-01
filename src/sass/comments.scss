@@ -1,7 +1,19 @@
 .comments{
-  @apply text-sm my-4 px-4 text-justify;
+  @apply text-sm my-4 px-4 text-justify pb-8 border-b border-white;
+}
+
+.comment-username{
+  @apply flex justify-between items-center text-xs font-extralight text-gray-400 italic w-full;
 }
 
 textarea{
-  @apply w-full h-36 overflow-y-auto mt-4 p-4 focus:outline-none focus:ring-2 focus:ring-gold;
+  @apply w-full h-36 overflow-y-auto text-xs mt-1 p-2 rounded-lg focus:outline-none focus:ring-2 focus:ring-gold;
+}
+
+label{
+  @apply text-xs font-light text-gray-400 ml-2;
+}
+
+input{
+  @apply mt-1 rounded-lg p-2 mb-2 focus:outline-none focus:ring-2 focus:ring-gold text-xs;
 }

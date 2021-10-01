@@ -23,7 +23,7 @@ function App() {
     useEffect( () => {
         WebFont.load({
             google: {
-                families: ['Poppins',  'Open Sans']
+                families: ['Poppins',  'Open Sans', 'Roboto']
             }
         });
     }, []);
