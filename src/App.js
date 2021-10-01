@@ -8,14 +8,13 @@ import CategoriesLayoutRoute from "./layouts/CategoriesLayout";
 import PageLayoutRoute from "./layouts/PageLayout";
 
 //components
-import NotFound from "./components/404notfound/NotFound";
-import Unavailable from "./components/404notfound/Unavailable";
+import {NotFound, Unavailable} from "./components/404notfound/index";
 
-import Home from "./components/home/Home";
-import Categories from "./components/Categories/Categories";
-import Articles from "./components/articles/Articles";
-import Videos from "./components/videos/Videos";
-import Timeline from './components/timeline/Timeline';
+import {Home} from './components/home/index';
+import {Categories} from './components/Categories/index';
+import {Articles} from './components/articles/index';
+import {Videos} from './components/videos/index';
+import {Timeline} from './components/timeline/index';
 
 function App() {
 

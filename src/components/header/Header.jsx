@@ -42,7 +42,7 @@ const Header = () => {
                   <Link to={"#"}>
                       <FontAwesomeIcon
                           icon={faUserSecret}
-                          className="text-gray-500 invisible"
+                          className="text-gray-500"
                       />
                   </Link>
 

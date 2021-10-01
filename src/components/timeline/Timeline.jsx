@@ -1,7 +1,7 @@
 import React from "react";
 
 //components
-import Tlines from "../home/timeline/Tlines";
+import {Tlines} from "../home/index";
 
 const Timeline = () => {
     return(

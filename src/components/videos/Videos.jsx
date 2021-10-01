@@ -3,8 +3,8 @@ import {instance as axios} from "../../config/axiosConfig";
 import {useRouteMatch, Route, Switch} from "react-router-dom";
 
 //components
-import VideoCard from "../common/cards/VideoCard";
-import VideoView from './VideoView';
+import {VideoCard} from "../common/index";
+import {VideoView} from './index';
 
 const Videos = () => {
 

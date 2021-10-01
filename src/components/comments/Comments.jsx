@@ -2,8 +2,7 @@ import React, {useState} from "react";
 import {instance as axios} from "../../config/axiosConfig";
 
 //components
-import CommentCard from "../common/cards/CommentCard";
-import {useLocation} from "react-router-dom";
+import {CommentCard} from "../common/index";
 
 const Comments = ({selected}) => {
 
@@ -38,7 +37,6 @@ const postComment = async() => {
         console.log("commentaire soumis");
     }
 
-    let location = useLocation();
 
     return (
         <>

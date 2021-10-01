@@ -3,8 +3,8 @@ import {instance as axios} from "../../config/axiosConfig";
 import {useRouteMatch, Route, Switch} from "react-router-dom";
 
 //components
-import ArticleCard from "../common/cards/ArticleCard";
-import ArticleView from "./ArticleView";
+import {ArticleCard} from "../common/index";
+import {ArticleView} from "./index";
 
 const Articles = () => {
 

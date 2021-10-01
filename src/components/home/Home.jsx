@@ -1,7 +1,7 @@
 import React from "react";
 
 //components
-import Body from "./body/Body";
+import {Body} from "./index";
 
 const Home = () => {
   return(

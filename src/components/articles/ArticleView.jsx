@@ -6,9 +6,10 @@ import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 import {faPaperPlane, faShare} from "@fortawesome/free-solid-svg-icons";
 
 //components
-import NotFound from "../404notfound/NotFound";
-import Loader from "../common/Loader";
-import GoBackButton from "../common/GoBackButton";
+import {NotFound} from "../404notfound/index";
+import {Loader} from "../common/index";
+import {Comments} from "../comments/index";
+import {GoBackButton} from "../common/index";
 
 const ArticleView = ({articles}) => {
 
@@ -61,6 +62,10 @@ const ArticleView = ({articles}) => {
 
                     <div className="content">
                         {selected.content}
+                    </div>
+
+                    <div className="flex flex-col w-full mt-16">
+                        <Comments selected={selected} />
                     </div>
 
                 </div>

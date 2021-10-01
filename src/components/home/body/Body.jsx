@@ -1,8 +1,8 @@
 import React from "react";
 
 //components
-import HeroCard from "../../common/cards/HeroCard";
-import ArticleCard from "../../common/cards/ArticleCard";
+import {HeroCard} from "../../common/index";
+import {ArticleCard} from "../../common/index";
 import {Sport1, Sport2, Sport3, Sport4} from '../../../images/index';
 
 const Body = () => {
