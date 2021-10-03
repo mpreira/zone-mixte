@@ -1,14 +1,11 @@
-import React, {useState, useEffect} from "react";
+import React, {useEffect, useState} from "react";
 import {Route} from "react-router-dom";
 
 //components
 import {Header} from "../components/header/index";
-import {SportsBar} from '../components/common/index';
-import {Nav, MobileNav} from "../components/nav/index";
 import {Footer} from "../components/footer/index";
-import {Timeline} from "../components/home/index";
 
-const PageLayout = ({children}) => {
+const AccountLayout = ({children}) => {
 
     const [isXLarge, setIsXLarge] = useState(window.innerWidth >= 1280);
 
@@ -25,18 +22,14 @@ const PageLayout = ({children}) => {
         <div className="app">
             <Header />
             <div className="flex 2xl:justify-between">
-                <Nav />
                 {children}
-                <Timeline />
             </div>
             <Footer />
         </div>
     ) : (
         <div className="app">
-            <MobileNav />
             <div>
                 <Header />
-                <SportsBar />
                 {children}
                 <Footer />
             </div>
@@ -44,14 +37,14 @@ const PageLayout = ({children}) => {
     )
 }
 
-const PageLayoutRoute = ({component: Component, ...rest}) => {
-    return (
+const AccountLayoutRoute = ({component: Component, ...rest}) => {
+    return(
         <Route {...rest} render={matchProps => (
-            <PageLayout>
+            <AccountLayout>
                 <Component {...matchProps} />
-            </PageLayout>
+            </AccountLayout>
         )} />
     )
 };
 
-export default PageLayoutRoute;
+export default AccountLayoutRoute;

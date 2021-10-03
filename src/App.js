@@ -6,6 +6,7 @@ import WebFont from 'webfontloader';
 import HomeLayoutRoute from "./layouts/HomeLayout";
 import CategoriesLayoutRoute from "./layouts/CategoriesLayout";
 import PageLayoutRoute from "./layouts/PageLayout";
+import AccountLayoutRoute from "./layouts/AccountLayout";
 
 //components
 import {NotFound, Unavailable} from "./components/404notfound/index";
@@ -15,6 +16,8 @@ import {Categories} from './components/Categories/index';
 import {Articles} from './components/articles/index';
 import {Videos} from './components/videos/index';
 import {Timeline} from './components/timeline/index';
+
+import {Account} from './components/account/index';
 
 function App() {
 
@@ -33,11 +36,14 @@ function App() {
             <Route exact path="/">
                 <Redirect to="/accueil" />
             </Route>
+
             <HomeLayoutRoute path="/accueil" component={Home} />
             <CategoriesLayoutRoute path="/categories" component={Categories} />
             <PageLayoutRoute path="/articles" component={Articles} />
             <PageLayoutRoute path="/videos" component={Videos} />
             <PageLayoutRoute path="/chrono" component={Timeline} />
+
+            <AccountLayoutRoute path="/mon-compte" component={Account} />
 
             <PageLayoutRoute path="*" component={NotFound} />
             <PageLayoutRoute path="/indisponible" component={Unavailable} />

@@ -39,10 +39,10 @@ const Header = () => {
                       <FontAwesomeIcon icon={faInstagram} className="fa-lg" />
                   </Link>
 
-                  <Link to={"#"}>
+                  <Link to={"/mon-compte"}>
                       <FontAwesomeIcon
                           icon={faUserSecret}
-                          className="text-gray-500"
+                          className="fa-lg"
                       />
                   </Link>
 

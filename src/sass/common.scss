@@ -43,6 +43,10 @@
   @apply mx-auto 2xl:w-7/12 xl:w-1/2 xl:mr-auto xl:ml-80 2xl:ml-96 2xl:mr-0 md:w-3/4 w-full flex flex-col 2xl:pl-24 xl:py-4 xl:px-16 p-4;
 }
 
+.account-body{
+  @apply w-3/4 mx-auto my-6;
+}
+
 // TIMELINE
 .timeline{
   @apply text-gray-500;
