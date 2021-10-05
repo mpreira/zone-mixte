@@ -21,9 +21,12 @@ const Header = () => {
               </div>
 
               {/* LOGO */}
-              <div className={"logo"}>
+              <Link
+                  className={"logo"}
+                  to={"/accueil"}
+              >
                   <img src={logo250} alt={"logo"} />
-              </div>
+              </Link>
 
               {/* SEARCH */}
               <div className={"menu"}>

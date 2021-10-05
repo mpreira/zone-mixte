@@ -19,7 +19,7 @@ const Informations = () => {
     }
 
     return(
-        <>
+        <div className="lg:mt-24 lg:mb-0 md:my-24">
             <h3>Mes informations personnelles</h3>
 
             <form onSubmit={handleSubmit}>
@@ -51,7 +51,7 @@ const Informations = () => {
                     placeholder="mot de passe"
                 />
 
-                <div className="mt-6 flex justify-center">
+                <div className="md:mt-24 mt-6 flex justify-center">
                     <button
                         className="button button-primary mr-2"
                         onClick={modifyInformations}
@@ -66,7 +66,7 @@ const Informations = () => {
                 </div>
 
             </form>
-        </>
+        </div>
 
     )
 }

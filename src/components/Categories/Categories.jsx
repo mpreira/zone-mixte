@@ -5,6 +5,7 @@ import {Link} from "react-router-dom";
 const Categories = () => {
 
     const [sports, setSports] = useState([]);
+    const [choice, setChoice] = useState([]);
 
     useEffect( () => {
         const fetchSports = async() => {
@@ -20,16 +21,22 @@ const Categories = () => {
         fetchSports();
     }, []);
 
+    const handleCategory = e => {
+        e.preventDefault();
+        console.log("choix")
+
+    }
+
     const displaySports =
         <div className="sports-grid">
             {sports.map((sport, i) => (
-            <Link
-                key={i}
-                to={'#'}
+            <button
+                key={sport.id}
                 className="col-span-4 col-row-2 flex items-center justify-center bg-crimson py-2 px-3 text-white font-semibold rounded-2xl"
+                onClick={handleCategory}
             >
                 {sport.name}
-            </Link>
+            </button>
             ))}
         </div>
 

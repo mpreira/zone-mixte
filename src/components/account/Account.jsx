@@ -41,7 +41,7 @@ const Account = () => {
           <div className={"flex justify-center"}>
               <Link
                   to={"/accueil"}
-                  className={"button button-primary"}
+                  className={"button button-primary md:mb-24"}
               >
                   Retourner à l'accueil
               </Link>
