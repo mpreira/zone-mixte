@@ -17,6 +17,7 @@ import {Articles} from './components/articles/index';
 import {Videos} from './components/videos/index';
 import {Timeline} from './components/timeline/index';
 
+import {Login} from './components/login/index';
 import {Account} from './components/account/index';
 
 function App() {
@@ -43,6 +44,7 @@ function App() {
             <PageLayoutRoute path="/videos" component={Videos} />
             <PageLayoutRoute path="/chrono" component={Timeline} />
 
+            <AccountLayoutRoute path="/login" component={Login} />
             <AccountLayoutRoute path="/mon-compte" component={Account} />
 
             <PageLayoutRoute path="*" component={NotFound} />

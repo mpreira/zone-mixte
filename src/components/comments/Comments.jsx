@@ -46,7 +46,6 @@ const postComment = async() => {
                     <label htmlFor="comment-username">Nom d'utilisateur</label>
                     <input
                         type="text"
-                        className="w-full"
                         name="username"
                         onChange={handleChange}
                         value={data.username}
